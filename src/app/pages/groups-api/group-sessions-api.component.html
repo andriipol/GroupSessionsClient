@@ -1,0 +1,91 @@
+<!--src/app/pages/groups-api/group-sessions-api.component.html-->
+
+<div>
+  <h1>Group Sessions</h1>
+  <p>
+    Only users with create:sessions permissions have access to this info.
+  </p>
+  <div
+    class="btn-group mt-5"
+    role="group"
+    aria-label="External API Requests Examples"
+  >
+<!--    <button (click)="callApi()" type="button" class="btn btn-primary">-->
+<!--      Get Public Message-->
+<!--    </button>-->
+<!--    <button (click)="callSecureApi()" type="button" class="btn btn-primary">-->
+<!--      Get Protected Message-->
+<!--    </button>-->
+
+  </div>
+
+<!--  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="sessions">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>Session ID</th>-->
+<!--      <th>title</th>-->
+<!--      <th>location</th>-->
+<!--      <th>habit</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    &lt;!&ndash;  <button (click)="callApi()" type="button" class="btn btn-primary">&ndash;&gt;-->
+<!--    &lt;!&ndash;    Get Public Message&ndash;&gt;-->
+<!--    &lt;!&ndash;  </button>&ndash;&gt;-->
+<!--    <tr *ngFor="let session of sessions">-->
+<!--      <td>{{ session.id }}</td>-->
+<!--      <td>{{ session.title }}</td>-->
+<!--      <td>{{ session.location }}</td>-->
+<!--      <td>{{ session.habit_title }}</td>-->
+
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+  <button class="btn btn-danger" style="width:100px" (click)="addSession()"> Add Session</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>title</th>
+      <th>habit/topic</th>
+      <th>summary</th>
+      <th>organizer</th>
+      <th>capacity</th>
+      <th>location</th>
+      <th>start_date</th>
+      <th>end_date</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let session of sessions">
+<!--      <td class="hidden"></td>-->
+      <td>{{ session.id }}</td>
+      <td>{{ session.title }}</td>
+      <td>{{ session.habit_title }}</td>
+      <td>{{ session.summary }}</td>
+      <td>{{ session.organizer }}</td>
+      <td>{{ session.capacity }}</td>
+      <td>{{ session.location }}</td>
+      <td>{{ session.start_date }}</td>
+      <td>{{ session.end_date }}</td>
+
+      <td>
+        <button class="btn btn-success" (click)="deleteSession(session)"> Delete</button>
+        <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
+        </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--  <div *ngIf="sessions" class="mt-5">-->
+  <!--    <h6 class="muted">Result</h6>-->
+  <!--    <div class="container-fluid">-->
+  <!--      <div class="row">-->
+  <!--        <code class="col-12 text-light bg-dark p-4">-->
+  <!--          {{ sessions }}-->
+  <!--        </code>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+</div>

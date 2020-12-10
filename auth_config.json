@@ -1,0 +1,7 @@
+{
+  "domain": "dev-vlzoi29f.us.auth0.com",
+  "clientId": "7dJoBOG6lR1SQORdysR34ZVlL19FAcl7",
+  "audience": "http://localhost:8080",
+  "serverUrl": "https://3.85.32.172:8080",
+  "scope": "openid profile create:sessions"
+}

@@ -1,0 +1,41 @@
+<!--src/app/pages/groups-api/group-sessions-api.component.html-->
+
+<div>
+  <h1>Habits/Topics of Sessions</h1>
+  <p>
+    There are habits/topics of sessions available right now. All users can see this.
+  </p>
+  <div
+    class="btn-group mt-5"
+    role="group"
+    aria-label="Habits API Requests"
+  >
+
+  </div>
+
+
+<!--  <button class="btn btn-danger" style="width:100px" (click)="addSession()"> Add Session</button>-->
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>title</th>
+      <th>summary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let habit of habits">
+      <!--      <td class="hidden"></td>-->
+      <td>{{ habit.id }}</td>
+      <td>{{ habit.title }}</td>
+      <td>{{ habit.summary }}</td>
+
+<!--      <td>-->
+<!--        <button class="btn btn-success" (click)="deleteSession(session)"> Delete</button>-->
+<!--        &lt;!&ndash;        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>&ndash;&gt;-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+  </table>
+
+</div>

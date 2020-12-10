@@ -1,0 +1,50 @@
+<div class="col-md-6 session-container">
+  <h2 class="text-center">Add Session</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="habit_id">Choose a habit to work on / Topic of the session:</label>
+      <select formControlName="habit_id" id="habit_id" >
+        <option *ngFor="let habit of habits; let i = index" [value]="habits[i].id">
+          {{habits[i].title}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" formControlName="title" placeholder="title" name="title" class="form-control" id="title">
+    </div>
+
+    <div class="form-group">
+      <label for="summary">Summary: </label>
+      <input type="text" formControlName="summary" placeholder="Write down brief summary" name="summary" class="form-control" id="summary">
+    </div>
+
+    <div class="form-group">
+      <label for="organizer">Organizer: </label>
+      <input type="text" formControlName="organizer" placeholder="Who organizes the meeting" name="organizer" class="form-control" id="organizer">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" formControlName="location" placeholder="Write the address" name="location" class="form-control" id="location">
+    </div>
+
+    <div class="form-group">
+      <label for="capacity">capacity: </label>
+      <input type="number" formControlName="capacity" placeholder="capacity" name="capacity" class="form-control" id="capacity">
+    </div>
+    <div class="form-group">
+      <label for="start_date">Start date: </label>
+      <input type="datetime-local" formControlName="start_date" placeholder="start_date" name="start_date" class="form-control" id="start_date">
+    </div>
+
+    <div class="form-group">
+      <label for="end_date">End date: </label>
+      <input type="datetime-local" formControlName="end_date" placeholder="end_date" name="end_date" class="form-control" id="end_date">
+    </div>
+
+<button class="btn btn-success">Add</button>
+</form>
+</div>
