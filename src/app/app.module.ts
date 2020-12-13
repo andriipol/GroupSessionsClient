@@ -31,6 +31,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HabitsApiComponent} from './pages/habits-api/habits-api.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AuthenticationCallbackActivateGuard} from './AuthenticationCallbackActivateGuard';
+import { AddHabitComponent } from './components/add-habit/add-habit.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {AuthenticationCallbackActivateGuard} from './AuthenticationCallbackActiv
     AuthNavComponent,
     AddSessionComponent,
     HabitsApiComponent,
+    AddHabitComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,7 @@ import {AuthenticationCallbackActivateGuard} from './AuthenticationCallbackActiv
     AuthModule.forRoot({
       ...env.auth,
       httpInterceptor: {
-        allowedList: [`${env.dev.serverUrl}/api/sessions*`],
+        allowedList: [`${env.dev.serverUrl}/api/sessions*`, `${env.dev.serverUrl}/api/habits*`],
       },
     }),
   ],

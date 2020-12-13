@@ -3,8 +3,8 @@
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="habit_id">Choose a habit to work on / Topic of the session:</label>
-      <select formControlName="habit_id" id="habit_id" >
+      <label for="habit_id" style="color:red">*Choose a habit to work on / Topic of the session:</label>
+      <select formControlName="habit_id" id="habit_id" style="width: 250px;">
         <option *ngFor="let habit of habits; let i = index" [value]="habits[i].id">
           {{habits[i].title}}
         </option>

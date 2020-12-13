@@ -25,6 +25,16 @@ export class HabitsApiComponent implements OnInit {
       }, error => console.error(error));
   }
 
+  addHabit(): void {
+      this.router.navigate(['add-habit']);
+  }
+
+  deleteHabit(habit: Habit): void {
+    this.http.delete(`${env.dev.serverUrl}/api/habits/delete/` + habit.id)
+      .subscribe(data => {
+        this.habits = this.habits.filter(u => u !== habit);
+      });
+  }
 }
 
 interface Habit {

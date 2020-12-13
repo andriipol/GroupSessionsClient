@@ -14,7 +14,7 @@
   </div>
 
 
-<!--  <button class="btn btn-danger" style="width:100px" (click)="addSession()"> Add Session</button>-->
+  <button class="btn btn-danger" style="width:100px" (click)="addHabit()"> Add Habit/Topic</button>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -30,10 +30,10 @@
       <td>{{ habit.title }}</td>
       <td>{{ habit.summary }}</td>
 
-<!--      <td>-->
-<!--        <button class="btn btn-success" (click)="deleteSession(session)"> Delete</button>-->
-<!--        &lt;!&ndash;        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>&ndash;&gt;-->
-<!--      </td>-->
+      <td>
+        <button class="btn btn-success" (click)="deleteHabit(habit)"> Delete</button>
+        <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
+      </td>
     </tr>
     </tbody>
   </table>
