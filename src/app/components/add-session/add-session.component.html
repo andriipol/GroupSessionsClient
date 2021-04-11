@@ -3,18 +3,25 @@
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="habit_id" style="color:red">*Choose a habit to work on / Topic of the session:</label>
-      <select formControlName="habit_id" id="habit_id" style="width: 250px;">
+      <label for="habit_id">Choose a habit to work on / Topic of the session:</label>
+      <select formControlName="habit_id" id="habit_id" style="width: 250px;" ngModel required #habit_id>
+        <option [ngValue]="null" disabled>Choose your profile</option>
         <option *ngFor="let habit of habits; let i = index" [value]="habits[i].id">
           {{habits[i].title}}
         </option>
       </select>
+      <div *ngIf="!habit_id.checkValidity()" style="color:red">* This field is required</div>
+
     </div>
 
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" formControlName="title" placeholder="title" name="title" class="form-control" id="title">
+      <input type="text" formControlName="title" placeholder="title" name="title" class="form-control" id="title" ngModel required #title>
+      <div *ngIf="!title.checkValidity()" style="color:red">* This field is required</div>
+
     </div>
+
+
 
     <div class="form-group">
       <label for="summary">Summary: </label>
@@ -24,6 +31,12 @@
     <div class="form-group">
       <label for="organizer">Organizer: </label>
       <input type="text" formControlName="organizer" placeholder="Who organizes the meeting" name="organizer" class="form-control" id="organizer">
+    </div>
+
+    <div class="form-group">
+      <label for="host_email">Host email:</label>
+      <input type="text" formControlName="host_email" placeholder="host_email" name="host_email" class="form-control" id="host_email" ngModel required #host_email>
+      <div *ngIf="!host_email.checkValidity()" style="color:red">* This field is required</div>
     </div>
 
     <div class="form-group">

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 import {environment as env} from '../../../environments/environment';
 import {Router} from '@angular/router';
+import DateTimeFormat = Intl.DateTimeFormat;
 
 
 @Component({
@@ -34,6 +35,13 @@ export class GroupSessionsApiComponent implements OnInit {
       });
   }
 
+  addZoomMeeting(session: Session): void {
+    this.http.post(`${env.dev.serverUrl}/api/sessions/id/` + session.id + `/createZoomMeeting`, null)
+      .subscribe(data => {
+        this.sessions = this.sessions.filter(u => u !== session);
+      });
+  }
+
   addSession(): void {
     this.router.navigate(['add-session']);
   }
@@ -44,10 +52,12 @@ interface Session {
   title: string;
   summary: string;
   organizer: string;
+  host_email: string;
+  join_url: string;
   location: string;
   capacity: number;
-  start_date: any;
-  end_date: any;
+  start_date: DateTimeFormat;
+  duration: number;
   habit_title: string;
   habit: number;
 }

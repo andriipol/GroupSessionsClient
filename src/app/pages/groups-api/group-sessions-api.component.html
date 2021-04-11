@@ -22,10 +22,12 @@
       <th>habit/topic</th>
       <th>summary</th>
       <th>organizer</th>
+      <th>host email</th>
+      <th>url</th>
       <th>capacity</th>
       <th>location</th>
       <th>start_date</th>
-      <th>end_date</th>
+      <th>duration</th>
       <th>Action</th>
     </tr>
     </thead>
@@ -37,15 +39,21 @@
       <td>{{ session.habit_title }}</td>
       <td>{{ session.summary }}</td>
       <td>{{ session.organizer }}</td>
+      <td>{{ session.host_email }}</td>
+      <td><a href = "{{ session.join_url }}">Join here</a></td>
       <td>{{ session.capacity }}</td>
       <td>{{ session.location }}</td>
-      <td>{{ session.start_date }}</td>
-      <td>{{ session.end_date }}</td>
+      <td>{{ session.start_date | date:'short'}}</td>
+      <td>{{ session.duration | date: 'short'}}</td>
 
       <td>
         <button class="btn btn-success" (click)="deleteSession(session)"> Delete</button>
         <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
-        </td>
+      </td>
+      <td>
+        <button class="btn btn-success" (click)="addZoomMeeting(session)"> ZOOM</button>
+        <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
+      </td>
     </tr>
     </tbody>
   </table>

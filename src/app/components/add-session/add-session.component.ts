@@ -20,9 +20,11 @@ export class AddSessionComponent implements OnInit {
     this.getHabits();
     this.addForm = this.formBuilder.group({
       title: [null, Validators.required],
+      host_email: [null, Validators.required],
       summary: [],
       habits: [],
-      habit_id: ['', Validators.required],
+      habit_id: [null, [Validators.required]],
+
       capacity: [],
       end_date: [],
       location: [],
@@ -32,6 +34,10 @@ export class AddSessionComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (!this.addForm.valid) {
+      alert('Please fill required fields');
+      return;
+    }
     this.addForm.removeControl('habits');
     this.http.post(`${env.dev.serverUrl}/api/sessions/create`, this.addForm.value)
       .subscribe(data => {
