@@ -32,6 +32,8 @@ import {HabitsApiComponent} from './pages/habits-api/habits-api.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AuthenticationCallbackActivateGuard} from './AuthenticationCallbackActivateGuard';
 import { AddHabitComponent } from './components/add-habit/add-habit.component';
+import { AgmCoreModule } from '@agm/core';
+import { DetailsSessionComponent } from './components/details-session/details-session.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { AddHabitComponent } from './components/add-habit/add-habit.component';
     AddSessionComponent,
     HabitsApiComponent,
     AddHabitComponent,
+    DetailsSessionComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,9 @@ import { AddHabitComponent } from './components/add-habit/add-habit.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: `${env.dev.mapsApiKey}`
+    }),
     // 👇 update AuthModule
     AuthModule.forRoot({
       ...env.auth,

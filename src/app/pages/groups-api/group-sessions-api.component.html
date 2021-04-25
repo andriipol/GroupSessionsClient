@@ -2,18 +2,21 @@
 
 <div>
   <h1>Group Sessions</h1>
-  <p>
-    Only users with create:sessions permissions have access to this info.
-  </p>
   <div
     class="btn-group mt-5"
     role="group"
     aria-label="External API Requests Examples"
   >
   </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" (boundsChange)="boundsChange($event)">
 
+    <agm-marker  *ngFor="let data of sessions; let i = index" [latitude]="data.latitude" [longitude]="data.longitude">
+
+    </agm-marker>
+  </agm-map>
 
   <button class="btn btn-danger" style="width:100px" (click)="addSession()"> Add Session</button>
+  <button class="btn btn-danger" style="width:100px" (click)="findSession()"> Find Session</button>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -25,7 +28,7 @@
       <th>host email</th>
       <th>url</th>
       <th>capacity</th>
-      <th>location</th>
+      <th>address</th>
       <th>start_date</th>
       <th>duration</th>
       <th>Action</th>
@@ -42,17 +45,16 @@
       <td>{{ session.host_email }}</td>
       <td><a href = "{{ session.join_url }}">Join here</a></td>
       <td>{{ session.capacity }}</td>
-      <td>{{ session.location }}</td>
+      <td>{{ session.address }}</td>
       <td>{{ session.start_date | date:'short'}}</td>
-      <td>{{ session.duration | date: 'short'}}</td>
+      <td>{{ session.duration }}</td>
 
       <td>
-        <button class="btn btn-success" (click)="deleteSession(session)"> Delete</button>
+        <button class="btn btn-success" (click)="getSession(session.id)">Details</button>
         <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
-      </td>
-      <td>
-        <button class="btn btn-success" (click)="addZoomMeeting(session)"> ZOOM</button>
-        <!--        <button class="btn btn-success" (click)="editSession(session)" style="margin-left: 20px;"> Edit</button>-->
+        <button class="btn btn-success" (click)="deleteSession(session)"  style="margin: 5px;">Delete</button>
+        <button class="btn btn-success" (click)="addZoomMeeting(session)">ZOOM</button>
+
       </td>
     </tr>
     </tbody>

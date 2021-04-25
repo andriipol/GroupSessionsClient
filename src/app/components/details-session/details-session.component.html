@@ -1,0 +1,48 @@
+<div class="col-md-6 session-container">
+  <h2 class="text-center">{{sessionDetails.title}}</h2>
+
+  <agm-map [latitude]="sessionDetails.latitude" [longitude]="sessionDetails.longitude" (boundsChange)="boundsChange($event)">
+<!--           (mapReady)="setMarker($event)"-->
+
+    <agm-marker [latitude]="sessionDetails.latitude" [longitude]="sessionDetails.longitude"></agm-marker>
+  </agm-map>
+
+  <h3>({{neLng}}, {{neLat}})   ({{swLng}}, {{swLat}})   clientX={{eclientX}}</h3>
+
+<!--    <div class="form-group">-->
+<!--      <label for="summary">Summary: </label>-->
+<!--      <input type="text" formControlName="summary" placeholder="Write down brief summary" name="summary" class="form-control" id="summary">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="organizer">Organizer: </label>-->
+<!--      <input type="text" formControlName="organizer" placeholder="Who organizes the meeting" name="organizer" class="form-control" id="organizer">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="host_email">Host email:</label>-->
+<!--      <input type="text" formControlName="host_email" placeholder="host_email" name="host_email" class="form-control" id="host_email" ngModel required #host_email>-->
+<!--      <div *ngIf="!host_email.checkValidity()" style="color:red">* This field is required</div>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="address">Address: </label>-->
+<!--      <input type="text" formControlName="address" placeholder="Write the address" name="address" class="form-control" id="address">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="capacity">capacity: </label>-->
+<!--      <input type="number" formControlName="capacity" placeholder="capacity" name="capacity" class="form-control" id="capacity">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="start_date">Start date: </label>-->
+<!--      <input type="datetime-local" formControlName="start_date" placeholder="start_date" name="start_date" class="form-control" id="start_date">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="duration">Duration: </label>-->
+<!--      <input type="number" formControlName="duration" placeholder="duration" name="duration" class="form-control" id="duration">-->
+<!--    </div>-->
+
+<!--    <button class="btn btn-success">Add</button>-->
+</div>

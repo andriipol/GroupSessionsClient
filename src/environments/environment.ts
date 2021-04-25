@@ -12,6 +12,7 @@ export const environment = {
     scope
   },
   dev: {
-    serverUrl,
+    serverUrl, mapsApiKey: 'AIzaSyA7ghP0Vl3u0QWtS8loJwMI-rqFGSHg8pA'
+
   },
 };

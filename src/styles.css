@@ -68,3 +68,6 @@ code {
 .hero .app-logo {
   max-width: 10.5rem;
 }
+agm-map {
+  height: 300px;
+}

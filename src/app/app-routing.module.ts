@@ -11,6 +11,7 @@ import {AddSessionComponent} from './components/add-session/add-session.componen
 import {HabitsApiComponent} from './pages/habits-api/habits-api.component';
 import {AuthenticationCallbackActivateGuard} from './AuthenticationCallbackActivateGuard';
 import {AddHabitComponent} from './components/add-habit/add-habit.component';
+import {DetailsSessionComponent} from './components/details-session/details-session.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
     path: 'add-session',
     component: AddSessionComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'details-session',
+    component: DetailsSessionComponent,
+    // canActivate: [AuthGuard],
   },
   {
     path: 'add-habit',
